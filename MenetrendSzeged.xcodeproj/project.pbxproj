@@ -17,6 +17,8 @@
 		6879266D20C5BF81000F9DC9 /* ScheduleDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879266A20C5BF81000F9DC9 /* ScheduleDBManager.swift */; };
 		6879266E20C5BF81000F9DC9 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879266B20C5BF81000F9DC9 /* Route.swift */; };
 		6879267020C5BF8F000F9DC9 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879266F20C5BF8F000F9DC9 /* Agency.swift */; };
+		6879267920C5C2D9000F9DC9 /* RouteCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879267820C5C2D9000F9DC9 /* RouteCollectionViewController.swift */; };
+		6879267B20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879267A20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6879266A20C5BF81000F9DC9 /* ScheduleDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDBManager.swift; sourceTree = "<group>"; };
 		6879266B20C5BF81000F9DC9 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		6879266F20C5BF8F000F9DC9 /* Agency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
+		6879267820C5C2D9000F9DC9 /* RouteCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCollectionViewController.swift; sourceTree = "<group>"; };
+		6879267A20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				6879265320C5BD88000F9DC9 /* ViewController.swift */,
+				6879267820C5C2D9000F9DC9 /* RouteCollectionViewController.swift */,
+				6879267A20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 				6879266E20C5BF81000F9DC9 /* Route.swift in Sources */,
 				6879267020C5BF8F000F9DC9 /* Agency.swift in Sources */,
 				6879265220C5BD88000F9DC9 /* AppDelegate.swift in Sources */,
+				6879267B20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift in Sources */,
+				6879267920C5C2D9000F9DC9 /* RouteCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
