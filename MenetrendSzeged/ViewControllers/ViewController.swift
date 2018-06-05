@@ -17,12 +17,12 @@ class ViewController: UIViewController {
         DispatchQueue.global(qos: .background).async {
             let routes = ScheduleDBManager.instance().getRoutes()
             let result = routes.first(where: { $0.shortName == "71A"})
-            let buses = routes.filter({$0.type == .Bus})
+            /*let buses = routes.filter({$0.type == .Bus})
             print("Buses:")
             for bus in buses
             {
                 print(bus.shortName)
-            }
+            }*/
             DispatchQueue.main.async {
                 self.testLabel.text = result!.startEndName
             }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681604C920C7166500F7871C /* RouteCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681604C820C7166500F7871C /* RouteCollectionReusableView.swift */; };
 		6879265220C5BD88000F9DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879265120C5BD88000F9DC9 /* AppDelegate.swift */; };
 		6879265420C5BD88000F9DC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6879265320C5BD88000F9DC9 /* ViewController.swift */; };
 		6879265720C5BD88000F9DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6879265520C5BD88000F9DC9 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		681604C820C7166500F7871C /* RouteCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCollectionReusableView.swift; sourceTree = "<group>"; };
 		6879264E20C5BD88000F9DC9 /* MenetrendSzeged.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenetrendSzeged.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6879265120C5BD88000F9DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6879265320C5BD88000F9DC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 			children = (
 				6879265320C5BD88000F9DC9 /* ViewController.swift */,
 				6879267820C5C2D9000F9DC9 /* RouteCollectionViewController.swift */,
-				6879267A20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -121,6 +122,8 @@
 			children = (
 				6879265A20C5BD8B000F9DC9 /* LaunchScreen.storyboard */,
 				6879265520C5BD88000F9DC9 /* Main.storyboard */,
+				681604C820C7166500F7871C /* RouteCollectionReusableView.swift */,
+				6879267A20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				6879267020C5BF8F000F9DC9 /* Agency.swift in Sources */,
 				6879265220C5BD88000F9DC9 /* AppDelegate.swift in Sources */,
 				6879267B20C5C7BF000F9DC9 /* RouteCollectionViewCell.swift in Sources */,
+				681604C920C7166500F7871C /* RouteCollectionReusableView.swift in Sources */,
 				6879267920C5C2D9000F9DC9 /* RouteCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,13 @@
 import UIKit
 
 private let reuseIdentifier = "routeCell"
+private let routeSectionHeaderView = "routeSectionView"
 
 class RouteCollectionViewController: UICollectionViewController  {
     
-    private var routes = [Route]()
+    private var trams = [Route]()
+    private var trolleys = [Route]()
+    private var busses = [Route]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,12 @@ class RouteCollectionViewController: UICollectionViewController  {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        routes = ScheduleDBManager.instance().getRoutes()
+        let routes = ScheduleDBManager.instance().getRoutes()
+        trams = routes.filter { $0.type == .Tram }
+        trolleys = routes.filter { $0.type == .Trolley }
+        trolleys.sort()
+        busses = routes.filter { $0.type == .Bus }
+        busses.sort()
         
 
         // Do any additional setup after loading the view.
@@ -44,23 +52,67 @@ class RouteCollectionViewController: UICollectionViewController  {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 3
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return routes.count
+        switch section
+        {
+        case 0:
+            return trams.count
+        case 1:
+            return trolleys.count
+        case 2:
+            return busses.count
+        default:
+            return 0
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RouteCollectionViewCell
         
-        let item = routes[indexPath.item].shortName
-        cell.routeName.text = item
-    
+        switch indexPath.section
+        {
+        case 0:
+            let item = trams[indexPath.item].shortName
+            cell.routeName.text = item
+        case 1:
+            let item = trolleys[indexPath.item].shortName
+            cell.routeName.text = item
+        case 2:
+            let item = busses[indexPath.item].shortName
+            cell.routeName.text = item
+        default:
+            cell.routeName.text = "Error"
+        }
+
         // Configure the cell
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: routeSectionHeaderView, for: indexPath) as! RouteCollectionReusableView
+        
+        switch indexPath.section
+        {
+        case 0:
+            sectionHeaderView.routeTitle = "Tram"
+            sectionHeaderView.backgroundColor = UIColor.yellow
+        case 1:
+            sectionHeaderView.routeTitle = "Trolley"
+            sectionHeaderView.backgroundColor = UIColor.red
+        case 2:
+            sectionHeaderView.routeTitle = "Bus"
+            sectionHeaderView.backgroundColor = UIColor.blue
+        default:
+            sectionHeaderView.routeTitle = "Error"
+        }
+        
+        return sectionHeaderView
     }
 
     // MARK: UICollectionViewDelegate
