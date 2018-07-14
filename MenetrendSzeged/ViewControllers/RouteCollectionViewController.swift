@@ -52,7 +52,7 @@ class RouteCollectionViewController: UICollectionViewController  {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return Route.ROUTE_TYPE_COUNT
     }
 
 
@@ -77,14 +77,11 @@ class RouteCollectionViewController: UICollectionViewController  {
         switch indexPath.section
         {
         case 0:
-            let item = trams[indexPath.item].shortName
-            cell.routeName.text = item
+            cell.routeName.text = trams[indexPath.item].shortName
         case 1:
-            let item = trolleys[indexPath.item].shortName
-            cell.routeName.text = item
+            cell.routeName.text = trolleys[indexPath.item].shortName
         case 2:
-            let item = busses[indexPath.item].shortName
-            cell.routeName.text = item
+            cell.routeName.text = busses[indexPath.item].shortName
         default:
             cell.routeName.text = "Error"
         }
@@ -100,16 +97,16 @@ class RouteCollectionViewController: UICollectionViewController  {
         switch indexPath.section
         {
         case 0:
-            sectionHeaderView.routeTitle = "Tram"
+            sectionHeaderView.routeTitle = Route.RouteTypeName.Tram.rawValue
             sectionHeaderView.backgroundColor = UIColor.yellow
         case 1:
-            sectionHeaderView.routeTitle = "Trolley"
+            sectionHeaderView.routeTitle = Route.RouteTypeName.Trolley.rawValue
             sectionHeaderView.backgroundColor = UIColor.red
         case 2:
-            sectionHeaderView.routeTitle = "Bus"
+            sectionHeaderView.routeTitle = Route.RouteTypeName.Bus.rawValue
             sectionHeaderView.backgroundColor = UIColor.blue
         default:
-            sectionHeaderView.routeTitle = "Error"
+            sectionHeaderView.routeTitle = Route.RouteTypeName.Error.rawValue
         }
         
         return sectionHeaderView

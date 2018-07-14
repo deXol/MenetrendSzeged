@@ -18,6 +18,16 @@ class Route : Comparable
         case Trolley = 800
     }
     
+    enum RouteTypeName: String
+    {
+        case Tram = "Tram"
+        case Bus = "Bus"
+        case Trolley = "Trolley"
+        case Error = "Error"
+    }
+    
+    static let ROUTE_TYPE_COUNT = 3
+    
     var id: Int
     var agencyId: Int
     var shortName: String
