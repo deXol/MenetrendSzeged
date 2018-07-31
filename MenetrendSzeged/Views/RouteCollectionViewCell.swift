@@ -12,4 +12,12 @@ class RouteCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var routeName: UILabel!
     
+    var route: Route?
+    {
+        didSet
+        {
+            routeName.text = route?.shortName
+        }
+    }
+    
 }

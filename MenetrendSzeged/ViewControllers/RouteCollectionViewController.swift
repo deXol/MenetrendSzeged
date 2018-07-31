@@ -77,13 +77,13 @@ class RouteCollectionViewController: UICollectionViewController  {
         switch indexPath.section
         {
         case 0:
-            cell.routeName.text = trams[indexPath.item].shortName
+            cell.route = trams[indexPath.item]
         case 1:
-            cell.routeName.text = trolleys[indexPath.item].shortName
+            cell.route = trolleys[indexPath.item]
         case 2:
-            cell.routeName.text = busses[indexPath.item].shortName
+            cell.route = busses[indexPath.item]
         default:
-            cell.routeName.text = "Error"
+            print("ERROR")
         }
 
         // Configure the cell
@@ -111,7 +111,18 @@ class RouteCollectionViewController: UICollectionViewController  {
         
         return sectionHeaderView
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? RouteCollectionViewCell
+        {
+            if let vc = segue.destination as? RouteViewController ,
+                segue.identifier == "routeSelect"
+            {
+                vc.route = cell.route
+            }
+        }
+    }
+  
     // MARK: UICollectionViewDelegate
 
     /*
